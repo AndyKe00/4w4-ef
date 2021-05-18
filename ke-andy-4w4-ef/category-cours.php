@@ -19,8 +19,6 @@ get_header();
 	?>
 </header><!-- .page-header -->
 	
-
-
 	<?php if ( have_posts() ) : ?>
 			<section class="session">
 			<?php
@@ -35,10 +33,6 @@ get_header();
 			</section> <!-- fin section cours -->
 		<?php endif; ?>
 		<?php endif; ?>
-
-
-	
-
 	</main><!-- #main -->
 
 <?php 
