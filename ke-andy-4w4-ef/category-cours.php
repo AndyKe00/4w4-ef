@@ -21,16 +21,22 @@ get_header();
 	
 	<?php if ( have_posts() ) : ?>
 			<section class="session">
+			
 			<?php
+			$precedent = "XXXXXX";
 			//global $tProprieté;
 			while ( have_posts() ) :
 				the_post();
                 convertirTableau($tPropriété);
 				//print_r($tPropriété);
-				get_template_part( 'template-parts/content', 'cours-gabarit' ); 
+				if ($tPropriété['session'] != $precedent): ?>
+					<h2><?php echo $tPropriété['session'] ?></h2>
+					<section class="<?php echo $tPropriété['session'] ?>">
+				<?php endif ?>	
 				
-			endwhile;?>
-			</section> <!-- fin section cours -->
+				<?php get_template_part( 'template-parts/content', 'cours-gabarit' ); ?>
+				</section>
+			<?php endwhile;?>
 		<?php endif; ?>
 		<?php endif; ?>
 	</main><!-- #main -->
